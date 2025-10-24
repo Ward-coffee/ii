@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>الصفحة الرئيسية - ورد كافيه</title>
+  <title> ورد كافيه</title>
 
-  <link rel="icon" href="photos/logo_icon.png" sizes="256x256" type="image/png">
-  <link rel="shortcut icon" href="photos/logo_icon.png" type="image/png">
-  <link rel="apple-touch-icon" href="photos/logo_icon.png" sizes="180x180">
+  <link rel="icon" href="photos/logo_icon.jpeg" sizes="256x256" type="image/png">
+  <link rel="shortcut icon" href="photos/logo_icon.jpeg" type="image/png">
+  <link rel="apple-touch-icon" href="photos/logo_icon.jpeg" sizes="180x180">
   <meta name="theme-color" content="#6A0DAD">
 
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -15,17 +15,26 @@
 
   <style>
     :root{
-      --primary: #6A0DAD;
-      --accent:  #8E44AD;
-      --text:    #2f1640;
-      --muted:   #6C3483;
-      --bg1:     #faf6ff;
-      --bg2:     #f3ebff;
-      --card-bg: rgba(255,255,255,0.96);
-      --glass-border: rgba(138,81,201,0.10);
+      --primary: #ffffff;   
+      /*        بنفسجي */
+      --accent:  #ffffff;
+      /*        أرجواني فاتح */
+      --text:    #ffffff;
+      /*                  بفنسجي  */
+      --muted:   #ffffff;
+      /*                 بنفسجي متوسط */
+      --bg1:     #702C91;
+      /*      ابيض */
+      --bg2:     #702C91;
+      /*      ابيض */
+      --card-bg: #702C91;
+      /*      ابيض */
+      --glass-border: #702C91;
+      /*      ابيض */
       --radius: 14px;
       --gap: 14px;
       --shadow: 0 14px 36px rgba(106,13,173,0.10);
+      /*      بنفسجي */
       --max-width: 920px;
       --icon-size: clamp(40px, 5.2vw, 56px);
       --icon-gap: 14px;
@@ -65,20 +74,20 @@
 
     /* ✅ الشعار بدون أي إطار أو خلفية */
     .logo-img {
-      width:92px;
-      height:92px;
-      border-radius:50%;
+      width:220px;
+      height:220px;
+      border-radius:80%;
       object-fit:cover;
       display:block;
       border:none; /* لا يوجد إطار */
       box-shadow:none; /* لا يوجد ظل */
     }
 
-    .title { font-size: 22px; color:var(--primary); font-weight:800; margin-top:6px; }
-    .subtitle { color:var(--muted); font-size:14px; margin-top:6px; line-height:1.45; max-width:720px; }
+    .title { font-size: 24px; color:var(--primary); font-weight:800; margin-top:6px; }
+    .subtitle { color:var(--muted); font-size:18px; margin-top:6px; line-height:1.45; max-width:720px; }
 
     .brand-socials { display:flex; gap:10px; margin-top:10px; align-items:center; justify-content:center; }
-    .brand-socials a { width:46px; height:46px; border-radius:12px; display:inline-flex; align-items:center; justify-content:center; background: transparent; color: var(--primary); text-decoration:none; border: 1px solid rgba(106,13,173,0.10); transition: transform .16s ease, background .16s ease, box-shadow .16s ease; }
+    .brand-socials a { width:46px; height:46px; border-radius:20px; display:inline-flex; align-items:center; justify-content:center; background: floralwhite; color: var(--bg1); text-decoration:none; border: 1px solid rgba(106,13,173,0.10); transition: transform .16s ease, background .16s ease, box-shadow .16s ease; }
     .brand-socials a i { font-size:18px; }
 
     .buttons-grid {
@@ -108,7 +117,7 @@
       padding: 14px 18px;
       min-height: 80px;
       background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-      color: #fff;
+      color: #702C91;
       overflow: hidden;
       transition: transform .16s cubic-bezier(.2,.9,.2,1), box-shadow .16s;
       box-shadow: 0 14px 36px rgba(106, 13, 173, 0.12);
@@ -125,10 +134,10 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      background: rgba(255,255,255,0.14);
+      background: #a835d65d;
     }
 
-    .btn .icon i { font-size: clamp(16px, 2.8vw, 22px); color: #fff; }
+    .btn .icon i { font-size: clamp(16px, 2.8vw, 22px); color: #702C91; }
     .btn .label {
       display:block;
       width:100%;
@@ -153,10 +162,9 @@
     <section class="card">
       <div class="brand">
         <!-- ✅ شعار بدون إطار -->
-        <img src="photos/logo_icon.jpg" alt="شعار ورد كافيه" class="logo-img" width="112" height="112" loading="lazy">
+        <img src="photos/logo_icon.jpeg" alt="شعار ورد كافيه" class="logo-img" width="112" height="112" loading="lazy">
 
-        <div class="title">ورد كافيه</div>
-        <div class="subtitle">حيث تزهرين</div>
+        <div class="title">مطعم ورد للسيدات</div>
 
         <div class="brand-socials">
           <a href="https://api.whatsapp.com/send?phone=967784056578" aria-label="واتساب" target="_blank"><i class="fab fa-whatsapp"></i></a>
