@@ -27,12 +27,10 @@
       --gap: 14px;
       --shadow: 0 14px 36px rgba(106,13,173,0.10);
       --max-width: 920px;
-      /* استخدم clamp لجعل الأيقونة قابلة للتكيف لكن تبقى كبيرة */
       --icon-size: clamp(40px, 5.2vw, 56px);
       --icon-gap: 14px;
     }
 
-    /* خطوط متجاوبة */
     html { font-size: 17px; }
     @supports (font-size: clamp(16px, 2.2vw, 20px)) {
       html { font-size: clamp(16px, 2.2vw, 20px); }
@@ -46,10 +44,10 @@
       color:var(--text);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
-      padding:30px 18px;
       display:flex;
-      align-items:flex-start;
-      justify-content:center;
+      align-items:center;        /* توسيط عمودي */
+      justify-content:center;    /* توسيط أفقي */
+      padding:0;                 /* إزالة المسافة العلوية */
     }
 
     .container{ width:100%; max-width:var(--max-width); margin:0 auto; position:relative; }
@@ -82,16 +80,14 @@
     .brand-socials a { width:46px; height:46px; border-radius:12px; display:inline-flex; align-items:center; justify-content:center; background: transparent; color: var(--primary); text-decoration:none; border: 1px solid rgba(106,13,173,0.10); transition: transform .16s ease, background .16s ease, box-shadow .16s ease; -webkit-user-select: none; user-select: none; touch-action: manipulation; }
     .brand-socials a i { font-size:18px; }
 
-    /* شبكة: صفين دائمًا */
     .buttons-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr)); /* دائمًا صفين */
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: var(--gap);
       margin-top: 18px;
       align-items:stretch;
     }
 
-    /* زر أكبر وواضح */
     .btn {
       position:relative;
       display:flex;
@@ -114,7 +110,6 @@
       box-sizing:border-box;
     }
 
-    /* أيقونة على اليمين (RTL) — حجم متجاوب */
     .btn .icon {
       position:absolute;
       right:18px;
@@ -133,12 +128,11 @@
     }
     .btn .icon i { font-size: clamp(16px, 2.8vw, 22px); color: #fff; opacity:0.98; }
 
-    /* نص أعرض وأكبر وثقيل مع حشو آمن على اليمين يمنع التداخل */
     .btn .label {
       display:block;
       width:100%;
       text-align:center;
-      font-size: clamp(18px, 3.6vw, 22px); /* يتوسع على الشاشات الكبيرة ويصغر قليلاً على الصغيرة */
+      font-size: clamp(18px, 3.6vw, 22px);
       font-weight:900;
       line-height:1;
       padding-right: calc(var(--icon-size) + var(--icon-gap) + 10px);
@@ -155,7 +149,6 @@
 
     .info { margin-top: 18px; text-align:center; font-size:14px; color:var(--muted); padding:14px; background: rgba(106,13,173,0.04); border-radius:10px; }
 
-    /* ضبط مناسب للشاشات الضيقة مع الحفاظ على صفين */
     @media (max-width: 480px) {
       :root {
         --gap: 10px;
@@ -180,7 +173,6 @@
       }
     }
 
-    /* إذا كان العرض الداخلي صغير جدًا: اجعل النص يلتف ويقلل الحشو قليلاً، مع الحفاظ على صفين */
     @media (max-width: 360px) {
       .btn .label { font-size: 15px; padding-right: calc(var(--icon-size) + 8px); }
       .btn { min-height: 60px; padding:8px 8px; }
@@ -210,67 +202,31 @@
         <div class="subtitle">أجواء راقية، مذاق لا يُنسى — جودة ومكونات طازجة.</div>
 
         <div class="brand-socials" role="navigation" aria-label="تابعنا - روابط التواصل">
-          <a href="https://wa.me/967771001217" aria-label="واتساب" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
-          <a href="https://www.facebook.com/صفحة_الفيس" aria-label="فيسبوك" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-          <a href="https://www.instagram.com/حساب_الانستجرام" aria-label="إنستغرام" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://wa.me/967771001217" aria-label="واتساب" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.facebook.com/صفحة_الفيس" aria-label="فيسبوك" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/حساب_الانستجرام" aria-label="إنستغرام" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
 
-      <div class="buttons-grid" aria-label="روابط سريعة">
-        <a class="btn" href="index.html" role="button" aria-label="المنيو - عرض القائمة">
-          <span class="label">المنيو</span>
-          <span class="icon" aria-hidden="true"><i class="fas fa-utensils"></i></span>
-        </a>
-
-        <a class="btn" href="map.html" role="button" aria-label="موقعنا">
-          <span class="label">الموقع</span>
-          <span class="icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
-        </a>
-
-        <a class="btn" href="fedback.html" role="button" aria-label="التقييم">
-          <span class="label">التقييم</span>
-          <span class="icon" aria-hidden="true"><i class="fas fa-star"></i></span>
-        </a>
-
-        <a class="btn" href="delivery.html" role="button" aria-label="الطلب السفري">
-          <span class="label">التوصيل السفري</span>
-          <span class="icon" aria-hidden="true"><i class="fas fa-truck"></i></span>
-        </a>
-
-        <a class="btn" href="complaints.html" role="button" aria-label="الشكاوي والاستفسارات">
-          <span class="label">الشكاوي</span>
-          <span class="icon" aria-hidden="true"><i class="fas fa-comments"></i></span>
-        </a>
-
-        <a class="btn" href="about.html" role="button" aria-label="عن المطعم">
-          <span class="label">عن المطعم</span>
-          <span class="icon" aria-hidden="true"><i class="fas fa-info-circle"></i></span>
-        </a>
+      <div class="buttons-grid">
+        <a class="btn" href="index.html"><span class="label">المنيو</span><span class="icon"><i class="fas fa-utensils"></i></span></a>
+        <a class="btn" href="map.html"><span class="label">الموقع</span><span class="icon"><i class="fas fa-map-marker-alt"></i></span></a>
+        <a class="btn" href="fedback.html"><span class="label">التقييم</span><span class="icon"><i class="fas fa-star"></i></span></a>
+        <a class="btn" href="delivery.html"><span class="label">التوصيل السفري</span><span class="icon"><i class="fas fa-truck"></i></span></a>
+        <a class="btn" href="complaints.html"><span class="label">الشكاوي</span><span class="icon"><i class="fas fa-comments"></i></span></a>
+        <a class="btn" href="about.html"><span class="label">عن المطعم</span><span class="icon"><i class="fas fa-info-circle"></i></span></a>
       </div>
 
-      <div class="info" aria-hidden="false">مفتوح اليوم: 8 صباحًا — 11 مساءً • خدمة توصيل متاحة</div>
+      <div class="info">مفتوح اليوم: 8 صباحًا — 11 مساءً • خدمة توصيل متاحة</div>
     </section>
   </div>
 
   <script>
-    // خفف التأثيرات على الأجهزة اللمسية — تفاعل بسيط
     document.querySelectorAll('.btn').forEach(btn=>{
       btn.addEventListener('pointerdown', ()=> btn.style.transform='translateY(-2px) scale(.998)');
       btn.addEventListener('pointerup', ()=> btn.style.transform='');
       btn.addEventListener('pointerleave', ()=> btn.style.transform='');
-      btn.addEventListener('keydown', (e)=> {
-        if (e.key === 'Enter' || e.key === ' ') btn.classList.add('pressed');
-      });
-      btn.addEventListener('keyup', ()=> btn.classList.remove('pressed'));
     });
-
-    document.querySelectorAll('.brand-socials a').forEach(a=>{
-      a.setAttribute('rel', 'noopener noreferrer');
-      a.setAttribute('target', '_blank');
-    });
-
-    // منع التحسس من الزر لو كانت الكتابة طويلة
-    // (إذا أردت أن تقصر النصوص الطويلة استبدلها هنا أو زد الحشو الأيمن)
   </script>
 </body>
 </html>
